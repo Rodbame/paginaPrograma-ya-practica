@@ -53,6 +53,7 @@ body {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     color: #fff;
     background: var(--primaryColor);
+    transition: all .3s ease;
 
     &:hover {
       background-color: var(--secondaryColor);
@@ -94,7 +95,7 @@ body {
       color: #000;
       font-weight: bold;
       transition: color 0.2s ease-in-out;
-
+      
       &:hover {
         color: var(--primaryColor);
       }
