@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  //color primario
+  --primaryColor: #9b2efa; /* purple */
+  //color primario pero mas tenue
+  --secondaryColor: #661fa8; /* darker purple*/
+  //header color
+  --headerBgColor: rgb(245, 245, 245);
+  //linear gradient transparent black
+  --gradient: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Heebo", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  h1 {
+    font-size: 3.5em;
+  }
+
+  h2 {
+    font-size: 2.7em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  p {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  button {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    background: var(--primaryColor);
+
+    &:hover {
+      background-color: var(--secondaryColor);
+    }
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  header {
+    background: var(--headerBgColor);
+
+    .logo {
+      margin: 0;
+      padding: 25px 30px;
+      font-weight: bold;
+      color: var(--primaryColor);
+      font-size: 1.7em;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-bottom: 25px;
+    }
+
+    a {
+      padding: 5px 12px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: var(--primaryColor);
+      }
+    }
+  }
+
+  section#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 90vh;
+    background-image: linear-gradient(0deg, var(--gradient), var(--gradient)),
+      url(../media/hero.jpg);
+    color: #fff;
+    transition: color 0.3s ease;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  section#somos-proya {
+    & .container {
+      text-align: center;
+      padding: 200px 12px;
+      & span {
+        color: var(--primaryColor);
+        transition: all 0.5ss;
+      }
+    }
+  }
+
+  section#nuestros-programas {
+    background: rgba(30, 30, 30, 1);
+    color: #fff;
+    padding: 100px 12px;
+
+    .container {
+      text-align: center;
+      padding: 20px 20px;
+
+      h3 {
+        font-size: 1.8em;
+      }
+
+      & .programas {
+        .carta {
+          padding: 30px 10px;
+          height: 250px;
+          margin-bottom: 30px;
+          background-position: center center;
+          background-size: cover;
+          padding: 50px;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          &:first-child {
+            background-image: linear-gradient(var(--gradient), var(--gradient)),
+              url(../media/front-end.jpg);
+          }
+
+          &:nth-child(2) {
+            background-image: linear-gradient(var(--gradient), var(--gradient)),
+              url(../media/full-stack.jpg);
+          }
+
+          &:nth-child(3) {
+            background-image: linear-gradient(var(--gradient), var(--gradient)),
+              url(../media/python.jpg);
+            margin-bottom: 0px;
+          }
+
+          p {
+            display: none;
+          }
+
+          form {
+            padding: 10px;
+          }
+          form:last-child {
+            padding: 10px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  section#caracteristicas {
+    .container {
+      text-align: center;
+      padding: 200px 12px;
+    }
+
+    & li {
+      margin: 12px;
+      font-weight: bold;
+    }
+  }
+
+  section#aplica-ya {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 200px 12px;
+    background: rgb(30, 30, 30);
+    color: #fff;
+
+    h2 {
+      font-size: 9vw;
+    }
+
+    button {
+      font-size: 5vw;
+    }
+  }
+
+  footer {
+    background: rgb(230, 230, 230);
+    color: rgb(100, 100, 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    p {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  body {
+    header {
+      .container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      nav {
+        flex-direction: row;
+        padding: 0;
+      }
+    }
+
+    section#hero {
+      font-size: 1.9rem;
+    }
+
+    section#somos-proya {
+      & .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .img-container {
+          background-image: url(../media/somos-proya.jpg);
+          width: 400px;
+          height: 500px;
+          background-position: center center;
+          background-size: cover;
+          margin: 20px;
+          border-radius: 3px;
+        }
+
+        .texto {
+          width: 50%;
+          margin: 20px;
+        }
+        & span {
+          color: var(--primaryColor);
+          transition: all 0.5ss;
+        }
+      }
+    }
+
+    section#caracteristicas {
+      background-image: url(../media/background-2.jpeg);
+      background-repeat: no-repeat;
+      background-size: 500px 400px;
+      background-position: calc(100vw - 700px) 80px;
+
+      .container {
+        text-align: initial;
+      }
+
+      ul {
+        margin-left: 100px;
+      }
+
+      & li {
+        margin: 12px;
+        font-weight: bold;
+      }
+    }
+
+    section#aplica-ya {
+
+      h2 {
+        font-size: 5rem;
+      }
+
+      button {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  section#nuestros-programas {
+    background: rgba(30, 30, 30, 1);
+    color: #fff;
+    padding: 100px 12px;
+
+    .container {
+      text-align: center;
+      padding: 20px 10px;
+
+      & .programas {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+
+        .carta {
+          height: 300px;
+          margin: 0 30px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  body section#nuestros-programas .container .programas .carta p {
+    display: block;
+  }
+
+  body section#nuestros-programas .container .programas .carta {
+    height: 450px;
+    padding: 10px;
+  }
+}
